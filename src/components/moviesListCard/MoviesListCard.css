@@ -1,0 +1,10 @@
+.singleMovie {
+    background: linen;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3px;
+    /*border: 2px solid black;*/
+}
+

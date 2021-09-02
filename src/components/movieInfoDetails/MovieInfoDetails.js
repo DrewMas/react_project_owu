@@ -1,11 +1,24 @@
-export default function MovieInfoDetails(props) {
+import './MovieInfoDetails.css'
 
-    console.log(props);
+export default function MovieInfoDetails({item}) {
+
+    console.log(item);
+
+    let {backdrop_path, original_title, overview, budget,release_date, revenue,tagline} = item;
 
     return (
-        <div>
-            MovieInfoDetails
-
+        <div className={'movieInfoWrapper'}>
+            <div className={'movieInfoContent'}>
+                <div className={'movieInfoImage'}>
+                    <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt=""/>
+                </div>
+                <div className={'movieInfoText'}>
+                    Movie title: {original_title} <br/>
+                    Info: {overview} <br/>
+                    Budget: {budget} <br/>
+                    Tagline: {tagline}
+                </div>
+            </div>
         </div>
     );
 }

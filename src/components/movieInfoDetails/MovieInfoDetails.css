@@ -1,0 +1,17 @@
+.movieInfoWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.movieInfoContent {
+    width: 1280px;
+    display: flex;
+}
+
+.movieInfoImage {
+
+}
+
+.movieInfoText {
+    text-align: center;
+}

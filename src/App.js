@@ -16,7 +16,8 @@ function App() {
           <div className="App">
               <Header/>
 
-              <MoviesList/>
+              <Route path={'/'} render={()=> <MoviesList/>}/>
+              <Route/>
           </div>
       </Router>
   );

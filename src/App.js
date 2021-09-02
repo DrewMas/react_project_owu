@@ -9,15 +9,19 @@ import {
     Switch,
     withRouter
 } from "react-router-dom";
+import MovieInfo from "./components/movieInfo/MovieInfo";
 
 function App() {
-  return (
+    return (
       <Router>
           <div className="App">
               <Header/>
 
-              <Route path={'/'} render={()=> <MoviesList/>}/>
-              <Route/>
+              <Route exact path={'/'} render={()=> <MoviesList/>}/>
+              <Route path={'/movie_info/:id'} render={(props)=>
+                  <MovieInfo {...props}/>
+                  // console.log(props);
+              }/>
           </div>
       </Router>
   );

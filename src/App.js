@@ -20,7 +20,6 @@ function App() {
               <Route exact path={'/'} render={()=> <MoviesList/>}/>
               <Route path={'/movie_info/:id'} render={(props)=>
                   <MovieInfo {...props}/>
-                  // console.log(props);
               }/>
           </div>
       </Router>

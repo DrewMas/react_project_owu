@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {get_Movies} from "../../redux/actions/actions";
 import MoviesListCard from "../moviesListCard/MoviesListCard";
 import './MoviesList.css'
+import {getGenres} from "../../services/genres.api";
 
 export default function MoviesList() {
 
@@ -15,13 +16,17 @@ export default function MoviesList() {
 
     let {movies} = state;
 
-    console.log(state);
+    // console.log(state);
 
     useEffect(()=>{
         getMovies().then(value => {
            dispatch(get_Movies(value))
         });
     },[dispatch]);
+
+    useEffect(()=>{
+        getGenres().then(value => console.log(value.data.genres))
+    },[]);
 
     return (
         <div className={'moviesListWrapper'}>

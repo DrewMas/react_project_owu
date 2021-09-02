@@ -8,16 +8,6 @@ import {createStore} from 'redux'
 import {moviesReducer} from "./redux/reducers/movies.reducer";
 import {store} from "./redux/store";
 
-// const moviesReducer = (state = {movies:[]}, action) =>{
-//     switch (action.type){
-//         case 'GET_MOVIES':
-//             return {...state, movies: [...action.payload.data.results]};
-//         default:
-//             return state;
-//     }
-// }
-
-// export let store = createStore(moviesReducer);
 
 ReactDOM.render(
     <React.StrictMode>

@@ -7,7 +7,10 @@ import './MoviesList.css'
 
 export default function MoviesList() {
 
-    const state = useSelector(state => state);
+    const state = useSelector(state => {
+        let {moviesReducer} = state
+        return moviesReducer;
+    });
     const dispatch = useDispatch();
 
     let {movies} = state;

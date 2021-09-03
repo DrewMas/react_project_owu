@@ -5,6 +5,7 @@ import {get_Movies} from "../../redux/actions/actions";
 import MoviesListCard from "../moviesListCard/MoviesListCard";
 import './MoviesList.css'
 import {getGenres} from "../../services/genres.api";
+import ChooseGenre from "../genres/ChooseGenre";
 
 export default function MoviesList() {
 
@@ -17,22 +18,24 @@ export default function MoviesList() {
     let {movies} = state;
 
 
-    useEffect(()=>{
+    useEffect(() => {
         getMovies().then(value => {
             dispatch(get_Movies(value))
         });
-    },[dispatch]);
+    }, [dispatch]);
 
-    // useEffect(()=>{
-    //     getGenres().then(value => console.log(value.data.genres))
-    // },[]);
+
 
     return (
         <div className={'moviesListWrapper'}>
-            <div className={'moviesList'}>
-                {
-                    movies.map((value) => <MoviesListCard key={value.id} item={value}/>)
-                }
+            <div>
+                <ChooseGenre/>
+
+                <div className={'moviesList'}>
+                    {
+                        movies.map((value) => <MoviesListCard key={value.id} item={value}/>)
+                    }
+                </div>
             </div>
         </div>
     );

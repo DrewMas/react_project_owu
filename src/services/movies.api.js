@@ -7,10 +7,10 @@ const movies = axios.create({
     baseURL: baseUrl,
     headers: {
         Authorization: `Bearer ${token}`,
-    }
+    },
 });
 
-const getMovies = async ()=> await movies.get('/discover/movie');
+const getMovies = async ()=> await movies.get(`/discover/movie`);
 
 
 const movieInfo = axios.create({
@@ -37,16 +37,21 @@ const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 //     }
 // });
 
-export {getMovies, getMovieInfo}
+
 //
-// const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
-//
-//
-// const movies = axios.create({
+
+
+// const pages = axios.create({
 //     baseURL: 'https://api.themoviedb.org/3/',
 //     headers: {
 //         Authorization: `Bearer ${token}`,
 //     },
 // });
+// const pagination = async (page) => {
+//     await pages.get(`/discover/movie?api_key=${token}&page=${page}`)
+//     console.log(page);
+// };
 //
-// const getMovies = async (page) => await movies.get(`/discover/movie?api_key=${token}&page=${page}`);
+//
+export {getMovies, getMovieInfo}
+

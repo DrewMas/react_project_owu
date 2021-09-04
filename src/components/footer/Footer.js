@@ -1,8 +1,9 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import './Footer.css'
 import {useSelector} from "react-redux";
 import FooterButton from "../footerButton/FooterButton";
+import axios from "axios";
 
 
 export default function Footer() {
@@ -11,15 +12,14 @@ export default function Footer() {
         let {moviesReducer} = state;
         return moviesReducer
     });
-    let {page, pages} = state;
+    // let {page, pages} = state;
 
 
-    const [pageObjects, setPageObjects] = useState([]);
 
     return (
         <div className={'footer'}>
             <div className={'footer-navigation'}>
-                {/*<FooterButton/>*/}
+                <FooterButton state={state}/>
             </div>
         </div>
     );

@@ -18,6 +18,7 @@ export default function MoviesList() {
     let {movies} = state;
 
 
+
     useEffect(() => {
         getMovies().then(value => {
             dispatch(get_Movies(value))
@@ -29,7 +30,7 @@ export default function MoviesList() {
     return (
         <div className={'moviesListWrapper'}>
             <div>
-                <ChooseGenre/>
+                {/*<ChooseGenre/>*/}
 
                 <div className={'moviesList'}>
                     {

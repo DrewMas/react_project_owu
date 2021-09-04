@@ -1,0 +1,17 @@
+.selectFilm{
+    outline: none;
+
+}
+
+.selectFilm-select {
+    outline: none;
+    border: 0px solid transparent;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 4px;
+    background-color: transparent;
+}
+

@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import {getGenres} from "../../services/genres.api";
 import {useDispatch, useSelector} from "react-redux";
 import {get_Genres} from "../../redux/actions/actions";
+import './ChooseGenre.css'
 
 export default function ChooseGenre() {
 
@@ -11,7 +12,6 @@ export default function ChooseGenre() {
     });
 
     let {genres} = state;
-    console.log(genres);
 
     const dispatch = useDispatch();
 
@@ -22,12 +22,12 @@ export default function ChooseGenre() {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className={'selectFilm'}>
 
-            <select>
+            <select className={'selectFilm-select'}>
                 <option value="">All genres</option>
                 {
-                    genres.map(value => value.map(value => <option>{value.name}</option>))
+                    genres.map(value => value.map(value => <option key={value.id}>{value.name}</option>))
                 }
             </select>
 

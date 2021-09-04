@@ -1,29 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 import MoviesList from "./components/moviesList/MoviesList";
 import Header from "./components/header/Header";
 import {
     BrowserRouter as Router,
-    Link,
-    Route,
-    Switch,
-    withRouter
+    Route
 } from "react-router-dom";
 import MovieInfo from "./components/movieInfo/MovieInfo";
+import {useSelector} from "react-redux";
+import history from "./history/History";
 
 function App() {
-    return (
-      <Router>
-          <div className="App">
-              <Header/>
 
-              <Route exact path={'/'} render={()=> <MoviesList/>}/>
-              <Route path={'/movie_info/:id'} render={(props)=>
-                  <MovieInfo {...props}/>
-              }/>
-          </div>
-      </Router>
-  );
+    const state = useSelector(state => {
+        let {switchReducer} = state;
+        return switchReducer
+    });
+
+    console.log(state.isDarkTheme);
+
+    return (
+        <Router history={history}>
+            <div className={
+                `App ${state.isDarkTheme === false ? ' ' : 'App_dark'}`
+            }>
+                <Header/>
+
+                <Route exact path={'/'} render={() => <MoviesList/>}/>
+                <Route path={'/movie_info/:id'} render={(props) =>
+                    <MovieInfo {...props}/>
+                }/>
+            </div>
+        </Router>
+    );
 }
 
 export default App;

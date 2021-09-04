@@ -9,12 +9,11 @@ import './MoiveInfo.css'
 export default function MovieInfo({location:{state}}) {
 
     const reducerState = useSelector(state => {
-        let {moviesReducer} = state
-        return moviesReducer;
+        let {moviesInfoReducer} = state
+        return moviesInfoReducer;
     });
 
     let {movieInfo} = reducerState;
-
 
     const dispatch = useDispatch();
 

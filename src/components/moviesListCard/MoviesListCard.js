@@ -14,9 +14,11 @@ export default function MoviesListCard({item}) {
         return moviesReducer
     });
 
+
     return (
         <div>
-            <Link to={{pathname: '/movie_info/' + item.id, state: item}} className={`link ${state.isDarkTheme === false? '': 'link_black'}`}>
+            <Link to={{pathname: '/movie_info/' + item.id, state: item}}
+                  className={`link ${state.isDarkTheme === false ? '' : 'link_black'}`}>
                 <div className={'singleMovie'}>
                     <PosterPreview item={item}/>
                     <span className={'title'}>{item.original_title}</span>

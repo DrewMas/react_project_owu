@@ -1,15 +1,8 @@
 import './Switcher.css'
-import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {switchReducer} from "../../redux/reducers/themeSwitcher.reducer";
 import {setIsDarkTheme, setIsLightTheme} from "../../redux/actions/actions";
 
 export default function Switcher() {
-
-    // const state = useSelector(state => {
-    //     let {switchReducer} = state;
-    //     return switchReducer
-    // });
 
     const state = useSelector(state => {
         let {moviesReducer} = state;
@@ -25,9 +18,7 @@ export default function Switcher() {
     return (
         <>
             <span className={'switcherText'}>
-                {
-                    state.isDarkTheme === false  ? 'light theme' : 'dark theme'
-                }
+                {state.isDarkTheme === false ? 'light theme' : 'dark theme'}
             </span>
 
             <div className={'switchWrapper'}>

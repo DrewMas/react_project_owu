@@ -2,6 +2,7 @@ import {useState} from "react";
 
 import './Footer.css'
 import {useSelector} from "react-redux";
+import FooterButton from "../footerButton/FooterButton";
 
 
 export default function Footer() {
@@ -18,7 +19,7 @@ export default function Footer() {
     return (
         <div className={'footer'}>
             <div className={'footer-navigation'}>
-
+                {/*<FooterButton/>*/}
             </div>
         </div>
     );

@@ -2,7 +2,6 @@ import './MovieInfoDetails.css'
 
 export default function MovieInfoDetails({item}) {
 
-    console.log(item);
 
     let {backdrop_path, original_title, overview, budget,release_date, revenue,tagline} = item;
 

@@ -12,7 +12,6 @@ import {createStore} from 'redux'
 import {moviesReducer} from "./redux/reducers/movies.reducer";
 import {store} from "./redux/store";
 
-
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>

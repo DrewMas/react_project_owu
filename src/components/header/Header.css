@@ -13,11 +13,12 @@
 .header-column1, .header-column2, .header-column3, .header-column4 {
     width: 100%;
     height: 50px;
-    background: green;
+    background: #b20808;
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 .header-column1-logo {

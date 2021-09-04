@@ -3,5 +3,5 @@ import {genresReducer} from "./genres.reducer";
 import {switchReducer} from "./themeSwitcher.reducer";
 import {combineReducers} from 'redux';
 
-const rootReducer = combineReducers({moviesReducer, genresReducer, switchReducer});
+const rootReducer = combineReducers({moviesReducer, genresReducer /*switchReducer*/});
 export {rootReducer}

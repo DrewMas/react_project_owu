@@ -37,7 +37,7 @@ const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 // });
 
 export {getMovies, getMovieInfo}
-
+//
 // const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 //
 //

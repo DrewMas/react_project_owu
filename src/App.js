@@ -11,18 +11,24 @@ import history from "./history/History";
 
 function App() {
 
+    // const state = useSelector(state => {
+    //     let {switchReducer} = state;
+    //     return switchReducer
+    // });
     const state = useSelector(state => {
-        let {switchReducer} = state;
-        return switchReducer
+        let {moviesReducer} = state;
+        return moviesReducer
     });
 
     console.log(state.isDarkTheme);
+    console.log(state);
 
     return (
         <Router history={history}>
             <div className={
                 `App ${state.isDarkTheme === false ? ' ' : 'App_dark'}`
-            }>
+            }
+            >
                 <Header/>
 
                 <Route exact path={'/'} render={() => <MoviesList/>}/>

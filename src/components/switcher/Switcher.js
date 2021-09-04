@@ -6,9 +6,14 @@ import {setIsDarkTheme, setIsLightTheme} from "../../redux/actions/actions";
 
 export default function Switcher() {
 
+    // const state = useSelector(state => {
+    //     let {switchReducer} = state;
+    //     return switchReducer
+    // });
+
     const state = useSelector(state => {
-        let {switchReducer} = state;
-        return switchReducer
+        let {moviesReducer} = state;
+        return moviesReducer
     });
 
     const dispatch = useDispatch();

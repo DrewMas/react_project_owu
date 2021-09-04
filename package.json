@@ -15,7 +15,8 @@
     "redux": "^4.1.1",
     "react-redux": "^7.2.4",
     "axios": "^0.21.1",
-    "connected-react-router": "^6.9.1"
+    "connected-react-router": "^6.9.1",
+    "redux-devtools-extension": "^2.13.9"
   },
   "devDependencies": {
     "@types/react": "^17.0.16",

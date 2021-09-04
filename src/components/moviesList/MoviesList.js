@@ -17,7 +17,7 @@ export default function MoviesList() {
 
     let {movies} = state;
 
-
+    console.log(state);
 
     useEffect(() => {
         getMovies().then(value => {

@@ -29,9 +29,7 @@ export default function MoviesList() {
 
     return (
         <div className={'moviesListWrapper'}>
-            <div>
-                {/*<ChooseGenre/>*/}
-
+            <div className={'moviesList-container'}>
                 <div className={'moviesList'}>
                     {
                         movies.map((value) => <MoviesListCard key={value.id} item={value}/>)

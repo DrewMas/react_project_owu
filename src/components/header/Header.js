@@ -11,20 +11,22 @@ export default function Header() {
 
 
     return (
-        <div className={'header'}>
-            <div className={'header-column1'}>
-                <img src={logo} alt="img" className={'header-column1-logo'}/>
-                <h1 className={'header-column1-txt'}>Netflix</h1>
-            </div>
-            <div className={'header-column2'}>
-                <ChooseGenre/>
-            </div>
-            <div className={'header-column3'}>
-                <Switcher/>
-            </div>
-            <div className={'header-column4'}>
-                <span className={'header-column4-userName'}>Jane Doe</span>
-                <img src={user} alt="user" className={'header-column4-user'}/>
+        <div className={'header-wrapper'}>
+            <div className={'header'}>
+                <div className={'header-column1'}>
+                    <img src={logo} alt="img" className={'header-column1-logo'}/>
+                    <h1 className={'header-column1-txt'}>Netflix</h1>
+                </div>
+                <div className={'header-column2'}>
+                    <ChooseGenre/>
+                </div>
+                <div className={'header-column3'}>
+                    <Switcher/>
+                </div>
+                <div className={'header-column4'}>
+                    <span className={'header-column4-userName'}>Jane Doe</span>
+                    <img src={user} alt="user" className={'header-column4-user'}/>
+                </div>
             </div>
         </div>
     );

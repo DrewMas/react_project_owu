@@ -9,3 +9,13 @@
     display: flex;
     justify-content: center;
 }
+
+.moviesList div a {
+    text-decoration: none;
+    color: black;
+}
+
+.moviesList-container {
+    min-height: 100%;
+    height: auto;
+}

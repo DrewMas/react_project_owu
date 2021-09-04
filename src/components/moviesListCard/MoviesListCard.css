@@ -1,5 +1,5 @@
 .singleMovie {
-    background: linen;
+    /*background: linen;*/
     width: 210px;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,10 @@
 
 }
 
-div span a{
-    text-decoration: none;
+.link {
+    color: black;
 }
 
+.link_black{
+    color: white;
+}

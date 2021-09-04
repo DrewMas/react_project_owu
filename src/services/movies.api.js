@@ -22,7 +22,13 @@ const movieInfo = axios.create({
 const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 
 
-
+const getPages = (page) =>{
+    return fetch(baseUrl+`/discover/movie?api_key=${token}&page=${page}`, {
+        headers:{
+            Authorization: `Bearer ${token}`
+        }
+    }).then(value => value.json())
+}
 
 // const getMovies = async ()=> await movies.get(`/discover/movie?api_key=${token}`);
 //
@@ -53,5 +59,5 @@ const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 // };
 //
 //
-export {getMovies, getMovieInfo}
+export {getMovies, getMovieInfo, getPages}
 

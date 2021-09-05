@@ -1,10 +1,10 @@
 import {
     GET_GENRES,
-    GET_MOVIE_INFO,
-    GET_MOVIES, GET_MOVIES_BY_GENRE,
+    GET_MOVIES,
+    GET_MOVIES_BY_GENRE,
     SET_CURRENT_PAGE,
     SET_DARK_THEME,
-    SET_LIGHT_THEME
+    SET_LIGHT_THEME, SET_MOVIES_BY_GENRE
 } from "../actions/actionTypes";
 
 
@@ -14,7 +14,8 @@ export const moviesReducer = (state = {
     pages: [],
     page: 0,
     genres: [],
-    genresId: 0
+    genresId: 0,
+    moviesByGenres: []
 }, action) => {
     switch (action.type) {
         case GET_MOVIES:
@@ -29,10 +30,12 @@ export const moviesReducer = (state = {
         case SET_DARK_THEME:
             return {...state, isDarkTheme: false};
         case GET_GENRES:
-            return {...state, genres: [action.payload.data.genres]};
+            return {...state, genres: action.payload.data.genres};
         case GET_MOVIES_BY_GENRE:
-            return {...state, genresId: [action.payload.data.page]};
-
+            console.log(action);
+            return {...state, genresId: action.payload.data.page, moviesByGenres: [...action.payload.data.results]};
+        case SET_MOVIES_BY_GENRE:
+            return {...state, movies: [...action.payload.data.results], page: action.payload.data.page}
         default:
             return state;
     }

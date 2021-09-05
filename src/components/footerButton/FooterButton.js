@@ -5,9 +5,11 @@ import {setCurrentPage} from "../../redux/actions/actions";
 
 const FooterButton = ({...props}) => {
 
-    let {state: {page, pages}} = props;
+    let {state: {page, pages, genres, moviesByGenres, isDarkTheme}} = props;
 
     const dispatch = useDispatch();
+
+    console.log(moviesByGenres);
 
     const next = () => {
         if (page + 1 <= pages) {
@@ -37,14 +39,15 @@ const FooterButton = ({...props}) => {
         })
     }
 
+    let darkTheme = `${isDarkTheme ===false? ' ': 'footer-button_dark'}`;
 
     return (
         <div className={'footer-button-container'}>
-            <button className={'footer-button'} onClick={first}>First page</button>
-            <button onClick={prev} className={'footer-button'}>Prev</button>
+            <button className={`footer-button ${darkTheme}`} onClick={first}>First page</button>
+            <button onClick={prev} className={`footer-button ${darkTheme}`}>Prev</button>
             <div>{page} out of {pages}</div>
-            <button onClick={next} className={'footer-button'}>Next</button>
-            <button className={'footer-button'} onClick={last}>Last page</button>
+            <button onClick={next} className={`footer-button ${darkTheme}`}>Next</button>
+            <button className={`footer-button ${darkTheme}`} onClick={last}>Last page</button>
 
         </div>
     );

@@ -16,7 +16,7 @@ export default function Footer() {
 
 
     return (
-        <div className={'footer'}>
+        <div className={`footer`}>
             <div className={'footer-navigation'}>
                 <FooterButton state={state}/>
             </div>

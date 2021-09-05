@@ -9,18 +9,24 @@ import './Header.css'
 
 import logo from '../../assets/image/logo.png'
 import user from '../../assets/image/user.png'
+import {useSelector} from "react-redux";
 
 
 export default function Header() {
 
+    const state = useSelector(state => {
+        let {moviesReducer} = state;
+        return moviesReducer;
+    });
+
 
     return (
         <div className={'header-wrapper'}>
-            <div className={'header'}>
+            <div className={`header`}>
                 <Link to={{pathname: `/`}}>
                     <div className={'header-column1'}>
                         <img src={logo} alt="img" className={'header-column1-logo'}/>
-                        <h1 className={'header-column1-txt'}>Netflix</h1>
+                        <h1 className={`header-column1-txt ${state.isDarkTheme === false ? ' ' : 'header-column1-txt_black'}`}>Netflix</h1>
                     </div>
                 </Link>
                 <div className={'header-column2'}>

@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {getGenres, getMoviesWithGenres} from "../../services/genres.api";
 import {useDispatch, useSelector} from "react-redux";
-import {get_Genres, getMoviesByGenre} from "../../redux/actions/actions";
+import {get_Genres, getMoviesByGenres} from "../../redux/actions/actions";
 import './ChooseGenre.css'
 
 export default function ChooseGenre() {
@@ -13,9 +13,6 @@ export default function ChooseGenre() {
 
     let {genres, genresId} = state;
 
-    console.log(genres);
-
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,23 +23,23 @@ export default function ChooseGenre() {
 
 
     const genresSelector = (e) => {
-        let findId = genres.map(value => value.find(value => value.name === e.target.value))
-        let {id} = findId[0];
+        let findId = genres.find(value => value.name === e.target.value)
+
+        let {id} = findId;
         getMoviesWithGenres(id).then(value => {
-            dispatch(getMoviesByGenre(value))
+            dispatch(getMoviesByGenres(value))
         })
     }
 
 
     return (
-        <div className={'selectFilm'}>
+        <div className={`selectFilm`}>
 
-            <select className={'selectFilm-select'} onChange={genresSelector}>
+            <select className={`selectFilm-select ${state.isDarkTheme === false ? ' ' : 'selectFilm-select_dark'}`}
+                    onChange={genresSelector}>
                 <option value="">All genres</option>
                 {
-                    genres.map(value => value.map(value => <option key={value.id}>{value.name}</option>
-                        )
-                    )
+                    genres.map(value => <option key={value.id}>{value.name}</option>)
                 }
             </select>
 

@@ -21,7 +21,7 @@ function App() {
     });
 
     useEffect(() => {
-        const element = document.getElementsByTagName('html')[0]
+        const element = document.getElementsByTagName('html')[0];
         if (element !== null) {
             element.style.backgroundColor = state.isDarkTheme === false ? 'white' : 'black';
         }
@@ -29,16 +29,11 @@ function App() {
 
     return (
         <Router>
-            <div className={
-                `App ${state.isDarkTheme === false ? ' ' : 'App_dark'}`
-            }
-            >
+            <div className={`App ${state.isDarkTheme === false ? ' ' : 'App_dark'}`}>
                 <Header/>
 
                 <Switch>
-                    <Route exact path={'/'}>
-                        <MoviesList/>
-                    </Route>
+                    <Route exact path={'/'} render={() => <MoviesList/>}/>
                     <Route path={'/movie_info/:id'} render={(props) =>
                         <MovieInfo {...props}/>
                     }/>

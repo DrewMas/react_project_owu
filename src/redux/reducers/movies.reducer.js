@@ -9,7 +9,7 @@ export const moviesReducer = (state = {movies: [], /*movieInfo: [],*/ isDarkThem
         // case GET_MOVIE_INFO:
         //     return {...state, movieInfo: [action.payload.data]};
         case SET_CURRENT_PAGE:
-            return {...state, movies: [...action.payload.results], page: [action.payload.page]}
+            return {...state, movies: [...action.payload.data.results], page: [action.payload.data.page]}
         case SET_LIGHT_THEME:
             return {...state, isDarkTheme: true};
         case SET_DARK_THEME:

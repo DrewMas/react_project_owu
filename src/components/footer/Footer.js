@@ -12,7 +12,6 @@ export default function Footer() {
         let {moviesReducer} = state;
         return moviesReducer
     });
-    // let {page, pages} = state;
 
 
 

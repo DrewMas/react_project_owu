@@ -1,11 +1,24 @@
 import axios from "axios";
 
+const baseUrl = 'https://api.themoviedb.org/3/';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzE0ZDE2MmIyMGI0ZDkyOWZhNzU5OTk0NWNmMzI1YSIsInN1YiI6IjYxMmZiOTEwZTM4YmQ4MDA4M2NhODUyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW-wtc_gCd43fh1KAGjnmruDvsDYXKtPQ_2F-GJUQ3A';
+const withGenres = `&with_genres=`;
+
 const genres = axios.create({
-    baseURL: 'https://api.themoviedb.org/3/',
+    baseURL: baseUrl,
     headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzE0ZDE2MmIyMGI0ZDkyOWZhNzU5OTk0NWNmMzI1YSIsInN1YiI6IjYxMmZiOTEwZTM4YmQ4MDA4M2NhODUyMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lW-wtc_gCd43fh1KAGjnmruDvsDYXKtPQ_2F-GJUQ3A',
+        Authorization: `Bearer ${token}`,
     }
 });
 
 const getGenres = async () => await genres.get('genre/movie/list')
-export {getGenres}
+
+const moviesWithGenres = axios.create({
+    baseURL: baseUrl, headers:{
+        Authorization: `Bearer ${token}`
+    }
+});
+
+const getMoviesWithGenres = async (genreId) => await moviesWithGenres.get(`/discover/movie?api_key=${token}${withGenres}${genreId}`)
+
+export {getGenres, getMoviesWithGenres}

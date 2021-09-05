@@ -22,42 +22,26 @@ const movieInfo = axios.create({
 const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 
 
-const getPages = (page) =>{
-    return fetch(baseUrl+`/discover/movie?api_key=${token}&page=${page}`, {
-        headers:{
-            Authorization: `Bearer ${token}`
-        }
-    }).then(value => value.json())
-}
-
-// const getMovies = async ()=> await movies.get(`/discover/movie?api_key=${token}`);
-//
-//
-// const movies = axios.create({
-//     baseURL: 'https://api.themoviedb.org/3/',
-//     headers: {
-//         Authorization: `Bearer ${token}`,
-//     },
-//     params: {
-//         page: 3
-//     }
-// });
 
 
-//
+// const getPages = (page) =>{
+//     return fetch(baseUrl+`/discover/movie?api_key=${token}&page=${page}`, {
+//         headers:{
+//             Authorization: `Bearer ${token}`
+//         }
+//     }).then(value => value.json())
+// }
 
 
-// const pages = axios.create({
-//     baseURL: 'https://api.themoviedb.org/3/',
-//     headers: {
-//         Authorization: `Bearer ${token}`,
-//     },
-// });
-// const pagination = async (page) => {
-//     await pages.get(`/discover/movie?api_key=${token}&page=${page}`)
-//     console.log(page);
-// };
-//
-//
+const pages = axios.create({
+    baseURL: baseUrl,
+    headers: {
+        Authorization: `Bearer ${token}`,
+    }
+});
+const getPages = async (page) => await pages.get(`/discover/movie?api_key=${token}&page=${page}`)
+
+
 export {getMovies, getMovieInfo, getPages}
 
+// let url = `https://api.themoviedb.org/3/discover/movie?language=en-US&&page=${currentPage}&with_genres=${id}`

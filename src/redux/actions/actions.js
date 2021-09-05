@@ -1,4 +1,12 @@
-import {GET_GENRES, GET_MOVIE_INFO, GET_MOVIES, SET_CURRENT_PAGE, SET_DARK_THEME, SET_LIGHT_THEME} from "./actionTypes";
+import {
+    GET_GENRES,
+    GET_MOVIE_INFO,
+    GET_MOVIES,
+    GET_MOVIES_BY_GENRE,
+    SET_CURRENT_PAGE,
+    SET_DARK_THEME,
+    SET_LIGHT_THEME
+} from "./actionTypes";
 
 const get_Movies = (value) => {
     return {type: GET_MOVIES, payload: value}
@@ -24,4 +32,16 @@ const setCurrentPage = (value) => {
     return {type: SET_CURRENT_PAGE, payload: value}
 }
 
-export {get_Movies, get_Movie_Info, get_Genres, setIsDarkTheme, setIsLightTheme, setCurrentPage};
+const getMoviesByGenre = (value) => {
+    return {type: GET_MOVIES_BY_GENRE, payload: value}
+}
+
+export {
+    get_Movies,
+    get_Movie_Info,
+    get_Genres,
+    setIsDarkTheme,
+    setIsLightTheme,
+    setCurrentPage,
+    getMoviesByGenre
+};

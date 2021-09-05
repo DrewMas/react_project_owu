@@ -1,6 +1,10 @@
 import ChooseGenre from "../genres/ChooseGenre";
 import Switcher from "../switcher/Switcher";
 
+import {
+    Link
+} from "react-router-dom";
+
 import './Header.css'
 
 import logo from '../../assets/image/logo.png'
@@ -13,10 +17,12 @@ export default function Header() {
     return (
         <div className={'header-wrapper'}>
             <div className={'header'}>
-                <div className={'header-column1'}>
-                    <img src={logo} alt="img" className={'header-column1-logo'}/>
-                    <h1 className={'header-column1-txt'}>Netflix</h1>
-                </div>
+                <Link to={{pathname: `/`}}>
+                    <div className={'header-column1'}>
+                        <img src={logo} alt="img" className={'header-column1-logo'}/>
+                        <h1 className={'header-column1-txt'}>Netflix</h1>
+                    </div>
+                </Link>
                 <div className={'header-column2'}>
                     <ChooseGenre/>
                 </div>

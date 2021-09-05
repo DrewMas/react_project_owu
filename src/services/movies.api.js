@@ -22,17 +22,6 @@ const movieInfo = axios.create({
 const getMovieInfo = async (id) => await movieInfo.get(`/movie/${id}`)
 
 
-
-
-// const getPages = (page) =>{
-//     return fetch(baseUrl+`/discover/movie?api_key=${token}&page=${page}`, {
-//         headers:{
-//             Authorization: `Bearer ${token}`
-//         }
-//     }).then(value => value.json())
-// }
-
-
 const pages = axios.create({
     baseURL: baseUrl,
     headers: {

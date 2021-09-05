@@ -31,15 +31,12 @@ export const moviesReducer = (state = {
         case GET_GENRES:
             return {...state, genres: action.payload.data.genres};
         case GET_MOVIES_BY_GENRE:
-            console.log(action);
             return {...state, movies: [...action.payload.data.results], page: action.payload.data.page};
             //infinite scroll
             //return {...state, movies: [...movies].concat(action.payload.data.results, page: action.payload.data.page}
         case SET_GENRES_ID:
-            console.log(action);
             return {...state, genresId: action.payload }
         case SET_MOVIES_BY_GENRE:
-            console.log(action);
             return {...state, movies: [...action.payload.data.results], page: action.payload.data.page, genres: action.payload}
         default:
             return state;

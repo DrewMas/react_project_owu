@@ -1,6 +1,5 @@
 import {getPages} from "../../services/movies.api";
 import {useDispatch} from "react-redux";
-import {useEffect} from "react";
 import {getMoviesByGenres, setCurrentPage, setMoviesByGenre} from "../../redux/actions/actions";
 import {getMoviesByGenresPage} from "../../services/genres.api";
 
@@ -24,9 +23,13 @@ const FooterButton = ({...props}) => {
     }
 
     const prev = () => {
-        if (page > 1) {
+        if (page > 1 && genresId === 0) {
             getPages(Number(page) - 1).then(value => {
                 dispatch(setCurrentPage(value))
+            })
+        } else if (page > 1 && genresId > 0){
+            getMoviesByGenresPage(Number(page)-1, genresId).then(value => {
+                dispatch(getMoviesByGenres(value))
             })
         }
     }

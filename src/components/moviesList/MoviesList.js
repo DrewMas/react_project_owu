@@ -4,8 +4,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {get_Movies} from "../../redux/actions/actions";
 import MoviesListCard from "../moviesListCard/MoviesListCard";
 import './MoviesList.css'
-import {getGenres} from "../../services/genres.api";
-import ChooseGenre from "../genres/ChooseGenre";
 
 export default function MoviesList() {
 

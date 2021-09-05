@@ -5,10 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 
-import {ConnectedRouter, connectRouter} from "connected-react-router";
-
-import {createStore} from 'redux'
-import {moviesReducer} from "./redux/reducers/movies.reducer";
 import {store} from "./redux/store";
 
 ReactDOM.render(

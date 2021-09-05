@@ -1,8 +1,9 @@
 import {useEffect} from "react";
-import {getGenres, getMoviesWithGenres} from "../../services/genres.api";
+import {getGenres, getMoviesByGenresPage, getMoviesWithGenres} from "../../services/genres.api";
 import {useDispatch, useSelector} from "react-redux";
-import {get_Genres, getMoviesByGenres} from "../../redux/actions/actions";
+import {get_Genres, get_Movies, getMoviesByGenres, setGenresId} from "../../redux/actions/actions";
 import './ChooseGenre.css'
+import {getMovies} from "../../services/movies.api";
 
 export default function ChooseGenre() {
 
@@ -11,7 +12,7 @@ export default function ChooseGenre() {
         return moviesReducer;
     });
 
-    let {genres, genresId} = state;
+    let {genres} = state;
 
     const dispatch = useDispatch();
 
@@ -25,17 +26,26 @@ export default function ChooseGenre() {
     const genresSelector = (e) => {
         let findId = genres.find(value => value.name === e.target.value)
 
-        let {id} = findId;
-        getMoviesWithGenres(id).then(value => {
-            dispatch(getMoviesByGenres(value))
-        })
+        if (findId){
+            let {id} = findId;
+            console.log(id);
+            getMoviesByGenresPage(1,id).then(value => {
+                dispatch(getMoviesByGenres(value))
+            })
+            dispatch(setGenresId(id));
+        } else {
+            getMovies().then(value => {
+                dispatch(get_Movies(value))
+            })
+            dispatch(setGenresId(0));
+        }
     }
 
 
     return (
         <div className={`selectFilm`}>
 
-            <select className={`selectFilm-select ${state.isDarkTheme === false ? ' ' : 'selectFilm-select_dark'}`}
+            <select className={`selectFilm-select`}
                     onChange={genresSelector}>
                 <option value="">All genres</option>
                 {

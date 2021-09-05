@@ -3,7 +3,7 @@ import {
     GET_MOVIES,
     GET_MOVIES_BY_GENRE,
     SET_CURRENT_PAGE,
-    SET_DARK_THEME,
+    SET_DARK_THEME, SET_GENRES_ID,
     SET_LIGHT_THEME, SET_MOVIES_BY_GENRE
 } from "../actions/actionTypes";
 
@@ -15,7 +15,6 @@ export const moviesReducer = (state = {
     page: 0,
     genres: [],
     genresId: 0,
-    moviesByGenres: []
 }, action) => {
     switch (action.type) {
         case GET_MOVIES:
@@ -24,7 +23,7 @@ export const moviesReducer = (state = {
                 page: action.payload.data.page
             };
         case SET_CURRENT_PAGE:
-            return {...state, movies: [...action.payload.data.results], page: [action.payload.data.page]}
+            return {...state, movies: [...action.payload.data.results], page: action.payload.data.page}
         case SET_LIGHT_THEME:
             return {...state, isDarkTheme: true};
         case SET_DARK_THEME:
@@ -33,9 +32,15 @@ export const moviesReducer = (state = {
             return {...state, genres: action.payload.data.genres};
         case GET_MOVIES_BY_GENRE:
             console.log(action);
-            return {...state, genresId: action.payload.data.page, moviesByGenres: [...action.payload.data.results]};
+            return {...state, movies: [...action.payload.data.results], page: action.payload.data.page};
+            //infinite scroll
+            //return {...state, movies: [...movies].concat(action.payload.data.results, page: action.payload.data.page}
+        case SET_GENRES_ID:
+            console.log(action);
+            return {...state, genresId: action.payload }
         case SET_MOVIES_BY_GENRE:
-            return {...state, movies: [...action.payload.data.results], page: action.payload.data.page}
+            console.log(action);
+            return {...state, movies: [...action.payload.data.results], page: action.payload.data.page, genres: action.payload}
         default:
             return state;
     }

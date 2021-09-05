@@ -1,20 +1,24 @@
-import {getMovies, getPages, pagination} from "../../services/movies.api";
+import {getPages} from "../../services/movies.api";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {setCurrentPage} from "../../redux/actions/actions";
+import {getMoviesByGenres, setCurrentPage, setMoviesByGenre} from "../../redux/actions/actions";
+import {getMoviesByGenresPage} from "../../services/genres.api";
 
 const FooterButton = ({...props}) => {
 
-    let {state: {page, pages, genres, moviesByGenres, isDarkTheme}} = props;
+    let {state: {page, pages, genresId, isDarkTheme}} = props;
 
     const dispatch = useDispatch();
 
-    console.log(moviesByGenres);
 
     const next = () => {
-        if (page + 1 <= pages) {
+        if (page + 1 <= pages && genresId === 0) {
             getPages(Number(page) + 1).then(value => {
                 dispatch(setCurrentPage(value))
+            })
+        } else if (page + 1 <= pages && genresId > 0) {
+            getMoviesByGenresPage(Number(page) + 1, genresId).then(value => {
+                dispatch(getMoviesByGenres(value))
             })
         }
     }
@@ -39,7 +43,8 @@ const FooterButton = ({...props}) => {
         })
     }
 
-    let darkTheme = `${isDarkTheme ===false? ' ': 'footer-button_dark'}`;
+
+    let darkTheme = `${isDarkTheme === false ? ' ' : 'footer-button_dark'}`;
 
     return (
         <div className={'footer-button-container'}>

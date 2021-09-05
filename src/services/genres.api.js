@@ -19,7 +19,8 @@ const moviesWithGenres = axios.create({
     }
 });
 
-const getMoviesWithGenres = async (genreId) => await moviesWithGenres.get(`/discover/movie?api_key=${token}${withGenres}${genreId}`)
+const getMoviesWithGenres = async (genreId) =>
+    await moviesWithGenres.get(`/discover/movie?api_key=${token}${withGenres}${genreId}`)
 
 
 const moviesByGenres = axios.create({
@@ -29,7 +30,7 @@ const moviesByGenres = axios.create({
     }
 })
 
-const getMoviesByGenres = async (currentPage, id) =>
+const getMoviesByGenresPage = async (currentPage, id) =>
     await moviesByGenres.get(`discover/movie?language=en-US&&page=${currentPage}&with_genres=${id}`)
 
-export {getGenres, getMoviesWithGenres, getMoviesByGenres}
+export {getGenres, getMoviesWithGenres, getMoviesByGenresPage}

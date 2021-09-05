@@ -15,15 +15,15 @@ export default function MoviesList() {
     });
     const dispatch = useDispatch();
 
-    let {movies} = state;
+    let {movies, genresId} = state;
 
 
     useEffect(() => {
         getMovies().then(value => {
             dispatch(get_Movies(value))
         });
-    }, [dispatch]);
-
+        // if (genresId)
+    }, []);
 
 
     return (

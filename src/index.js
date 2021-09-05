@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 
-import history from '../src/history/History'
 import {ConnectedRouter, connectRouter} from "connected-react-router";
 
 import {createStore} from 'redux'

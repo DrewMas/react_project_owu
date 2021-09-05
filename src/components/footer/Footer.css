@@ -7,6 +7,22 @@
     height: 60px;
     margin-top: auto;
     margin-bottom: 0px;
-    /*position: sticky;*/
     bottom: 0px;
+}
+
+.footer-button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-navigation {
+    width: 300px;
+}
+
+.footer-button {
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: transparent;
+    font-size: 16px;
 }

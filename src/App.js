@@ -36,7 +36,7 @@ function App() {
                 <Header/>
 
                 <Switch>
-                    <Route exact path={'/'} className={'one'}>
+                    <Route exact path={'/'}>
                         <MoviesList/>
                     </Route>
                     <Route path={'/movie_info/:id'} render={(props) =>

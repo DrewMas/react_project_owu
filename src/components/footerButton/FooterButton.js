@@ -27,10 +27,10 @@ const FooterButton = ({...props}) => {
 
 
     return (
-        <div /*className={`button ${props.element.isActive === true ? 'button_active' : ' '}`}*/>
-            {/*<span className={'buttonNumber'}>{props.element.number}</span>*/}
-            <button onClick={prev}>Prev</button>
-            <button onClick={next}>Next</button>
+        <div className={'footer-button-container'}>
+            <button onClick={prev} className={'footer-button'}>Prev</button>
+            <div>{page} out of {pages}</div>
+            <button onClick={next} className={'footer-button'}>Next</button>
         </div>
     );
 }

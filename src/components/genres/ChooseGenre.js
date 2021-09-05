@@ -1,9 +1,13 @@
-import {useEffect} from "react";
-import {getGenres, getMoviesByGenresPage, getMoviesWithGenres} from "../../services/genres.api";
+import {getGenres, getMoviesByGenresPage} from "../../services/genres.api";
 import {useDispatch, useSelector} from "react-redux";
 import {get_Genres, get_Movies, getMoviesByGenres, setGenresId} from "../../redux/actions/actions";
-import './ChooseGenre.css'
 import {getMovies} from "../../services/movies.api";
+
+import {useEffect} from "react";
+
+
+import './ChooseGenre.css'
+
 
 export default function ChooseGenre() {
 
@@ -28,7 +32,6 @@ export default function ChooseGenre() {
 
         if (findId){
             let {id} = findId;
-            console.log(id);
             getMoviesByGenresPage(1,id).then(value => {
                 dispatch(getMoviesByGenres(value))
             })

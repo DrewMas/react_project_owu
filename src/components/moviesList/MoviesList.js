@@ -2,8 +2,11 @@ import {useEffect} from "react";
 import {getMovies} from "../../services/movies.api";
 import {useDispatch, useSelector} from "react-redux";
 import {get_Movies} from "../../redux/actions/actions";
+
 import MoviesListCard from "../moviesListCard/MoviesListCard";
+
 import './MoviesList.css'
+
 
 export default function MoviesList() {
 
@@ -13,15 +16,14 @@ export default function MoviesList() {
     });
     const dispatch = useDispatch();
 
-    let {movies, genresId} = state;
+    let {movies} = state;
 
 
     useEffect(() => {
         getMovies().then(value => {
             dispatch(get_Movies(value))
         });
-        // if (genresId)
-    }, []);
+    }, [dispatch]);
 
 
     return (

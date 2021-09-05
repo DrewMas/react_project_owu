@@ -1,15 +1,14 @@
 import ChooseGenre from "../genres/ChooseGenre";
 import Switcher from "../switcher/Switcher";
 
-import {
-    Link
-} from "react-router-dom";
-
-import './Header.css'
+import {Link} from "react-router-dom";
 
 import logo from '../../assets/image/logo.png'
 import user from '../../assets/image/user.png'
 import {useSelector} from "react-redux";
+
+import './Header.css'
+
 
 
 export default function Header() {
@@ -18,7 +17,6 @@ export default function Header() {
         let {moviesReducer} = state;
         return moviesReducer;
     });
-
 
     return (
         <div className={'header-wrapper'}>

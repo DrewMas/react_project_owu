@@ -1,9 +1,9 @@
-import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+
+import FooterButton from "../footerButton/FooterButton";
 
 import './Footer.css'
-import {useSelector} from "react-redux";
-import FooterButton from "../footerButton/FooterButton";
-import axios from "axios";
+
 
 
 export default function Footer() {

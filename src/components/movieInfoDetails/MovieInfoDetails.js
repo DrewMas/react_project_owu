@@ -3,7 +3,7 @@ import './MovieInfoDetails.css'
 export default function MovieInfoDetails({item}) {
 
 
-    let {backdrop_path, original_title, overview, budget,release_date, revenue,tagline} = item;
+    let {backdrop_path, original_title, overview, budget,tagline} = item;
 
     return (
         <div className={'movieInfoWrapper'}>

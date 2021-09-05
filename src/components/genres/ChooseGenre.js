@@ -3,18 +3,17 @@ import {getGenres, getMoviesWithGenres} from "../../services/genres.api";
 import {useDispatch, useSelector} from "react-redux";
 import {get_Genres, getMoviesByGenre} from "../../redux/actions/actions";
 import './ChooseGenre.css'
-import {findAllByDisplayValue} from "@testing-library/react";
 
 export default function ChooseGenre() {
 
     const state = useSelector(state => {
-        let {genresReducer} = state;
-        return genresReducer;
+        let {moviesReducer} = state;
+        return moviesReducer;
     });
 
     let {genres, genresId} = state;
 
-    console.log(genresId);
+    console.log(genres);
 
 
     const dispatch = useDispatch();
@@ -27,14 +26,10 @@ export default function ChooseGenre() {
 
 
     const genresSelector = (e) => {
-        console.log(e.target.value);
         let findId = genres.map(value => value.find(value => value.name === e.target.value))
-        console.log(findId[0]);
         let {id} = findId[0];
-        console.log(id);
         getMoviesWithGenres(id).then(value => {
             dispatch(getMoviesByGenre(value))
-            console.log(value);
         })
     }
 

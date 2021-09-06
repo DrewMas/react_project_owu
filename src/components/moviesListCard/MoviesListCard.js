@@ -22,9 +22,10 @@ export default function MoviesListCard({item}) {
                   className={`link ${state.isDarkTheme === false ? '' : 'link_black'}`}>
                 <div className={'singleMovie'}>
                     <PosterPreview item={item}/>
+                    <Stars item={item}/>
+
                     <span className={'title'}>{item.original_title}</span>
                 </div>
-                <Stars item={item}/>
             </Link>
 
         </div>

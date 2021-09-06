@@ -1,17 +1,40 @@
 .movieInfoWrapper {
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 
 .movieInfoContent {
     width: 1280px;
     display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
 }
 
 .movieInfoImage {
+    width: 50%;
+}
+
+.movieInfoImage img {
+    border-radius: 10px;
 
 }
 
 .movieInfoText {
-    text-align: center;
+    text-align: justify;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.movieInfoUpperBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.movieInfoBottomBox {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
 }

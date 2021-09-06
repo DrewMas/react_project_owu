@@ -5,6 +5,7 @@ import {
 
 import './MoviesListCard.css'
 import {useSelector} from "react-redux";
+import Stars from "../stars/Stars";
 
 
 export default function MoviesListCard({item}) {
@@ -23,6 +24,7 @@ export default function MoviesListCard({item}) {
                     <PosterPreview item={item}/>
                     <span className={'title'}>{item.original_title}</span>
                 </div>
+                <Stars item={item}/>
             </Link>
 
         </div>

@@ -3,19 +3,26 @@ import './MovieInfoDetails.css'
 export default function MovieInfoDetails({item}) {
 
 
-    let {backdrop_path, original_title, overview, budget,tagline} = item;
+    let {backdrop_path, original_title, overview, budget,tagline, release_date} = item;
+    console.log(item);
 
     return (
         <div className={'movieInfoWrapper'}>
             <div className={'movieInfoContent'}>
-                <div className={'movieInfoImage'}>
-                    <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt=""/>
+                <div className={'movieInfoUpperBox'}>
+                    <div className={'movieInfoImage'}>
+                        <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt=""/>
+                    </div>
+                    <div className={'movieInfoText'}>
+                        <h1>{original_title}</h1>
+                        <p><b>Budget</b>: ${budget} </p>
+                        <p><b>Tagline:</b> {tagline}</p>
+                        <p><b>Release date:</b> {release_date}</p>
+                    </div>
                 </div>
-                <div className={'movieInfoText'}>
-                    Movie title: {original_title} <br/>
-                    Info: {overview} <br/>
-                    Budget: {budget} <br/>
-                    Tagline: {tagline}
+                <div className={'movieInfoBottomBox'}>
+                    <h3>Overview:</h3>
+                    <p>{overview}</p>
                 </div>
             </div>
         </div>

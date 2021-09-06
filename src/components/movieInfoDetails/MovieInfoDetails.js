@@ -3,8 +3,10 @@ import './MovieInfoDetails.css'
 export default function MovieInfoDetails({item}) {
 
 
-    let {backdrop_path, original_title, overview, budget,tagline, release_date} = item;
-    console.log(item);
+    let {backdrop_path, original_title, overview, budget, tagline, release_date} = item;
+
+    let filmGenres = item.genres.map(value =>
+        item.genres.indexOf(value) !== item.genres.length - 1 ? value.name + ', ' : value.name + ' ');
 
     return (
         <div className={'movieInfoWrapper'}>
@@ -18,6 +20,7 @@ export default function MovieInfoDetails({item}) {
                         <p><b>Budget</b>: ${budget} </p>
                         <p><b>Tagline:</b> {tagline}</p>
                         <p><b>Release date:</b> {release_date}</p>
+                        <p><b>Genres:</b> {filmGenres}</p>
                     </div>
                 </div>
                 <div className={'movieInfoBottomBox'}>

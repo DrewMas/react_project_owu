@@ -1,10 +1,14 @@
-import {useEffect} from "react";
 import {getMovieInfo} from "../../services/movies.api";
+
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
+
 import {get_Movie_Info} from "../../redux/actions/actions";
+
 import MovieInfoDetails from "../movieInfoDetails/MovieInfoDetails";
 
 import './MoiveInfo.css'
+
 
 export default function MovieInfo({location:{state}}) {
 

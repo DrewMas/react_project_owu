@@ -1,11 +1,13 @@
 import PosterPreview from "../posterPreview/PosterPreview";
+import Stars from "../stars/Stars";
+
 import {
     Link
 } from "react-router-dom";
 
-import './MoviesListCard.css'
 import {useSelector} from "react-redux";
-import Stars from "../stars/Stars";
+
+import './MoviesListCard.css'
 
 
 export default function MoviesListCard({item}) {

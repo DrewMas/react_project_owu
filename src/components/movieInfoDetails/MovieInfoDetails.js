@@ -1,4 +1,5 @@
 import {useSelector} from "react-redux";
+
 import MovieInfoVideo from "../movieInfoVideo/MovieInfoVideo";
 
 import './MovieInfoDetails.css'
@@ -26,7 +27,6 @@ export default function MovieInfoDetails({item}) {
         let {moviesReducer} = state;
         return moviesReducer;
     });
-
 
 
     return (

@@ -1,7 +1,9 @@
 import {getGenres, getMoviesByGenresPage} from "../../services/genres.api";
-import {useDispatch, useSelector} from "react-redux";
-import {get_Genres, get_Movies, getMoviesByGenres, setGenresId} from "../../redux/actions/actions";
 import {getMovies} from "../../services/movies.api";
+
+import {useDispatch, useSelector} from "react-redux";
+
+import {get_Genres, get_Movies, getMoviesByGenres, setGenresId} from "../../redux/actions/actions";
 
 import {useEffect} from "react";
 

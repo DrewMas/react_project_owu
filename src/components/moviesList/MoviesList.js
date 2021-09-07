@@ -1,7 +1,8 @@
-import {useEffect} from "react";
 import {getMovies} from "../../services/movies.api";
-import {useDispatch, useSelector} from "react-redux";
 import {get_Movies} from "../../redux/actions/actions";
+
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 import MoviesListCard from "../moviesListCard/MoviesListCard";
 

@@ -1,6 +1,9 @@
-import './Switcher.css'
 import {useDispatch, useSelector} from "react-redux";
+
 import {setIsDarkTheme, setIsLightTheme} from "../../redux/actions/actions";
+
+import './Switcher.css'
+
 
 export default function Switcher() {
 

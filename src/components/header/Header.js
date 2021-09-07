@@ -7,10 +7,10 @@ import logo from '../../assets/image/logo.png'
 import user from '../../assets/image/user.png'
 import {useDispatch, useSelector} from "react-redux";
 
-import './Header.css'
 import {get_Movies, setGenresId} from "../../redux/actions/actions";
 import {getMovies} from "../../services/movies.api";
 
+import './Header.css'
 
 
 export default function Header() {

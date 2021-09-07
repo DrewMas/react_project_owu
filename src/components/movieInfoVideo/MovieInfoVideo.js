@@ -1,8 +1,11 @@
-import {useEffect} from "react";
-import {getVideo} from "../../services/movies.api";
 import ReactPlayer from "react-player";
+
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
+
+import {getVideo} from "../../services/movies.api";
 import {getFilmKey} from "../../redux/actions/actions";
+
 
 export default function MovieInfoVideo({item}) {
 
@@ -18,6 +21,7 @@ export default function MovieInfoVideo({item}) {
         return ''
     }
 
+    console.log(store.videos);
 
     const dispatch = useDispatch();
 
@@ -27,9 +31,6 @@ export default function MovieInfoVideo({item}) {
         })
     }, [dispatch, item.id]);
 
-
-
-
     return (
         <div>
 
@@ -38,5 +39,6 @@ export default function MovieInfoVideo({item}) {
             />
 
         </div>
-    );
+    )
+
 }

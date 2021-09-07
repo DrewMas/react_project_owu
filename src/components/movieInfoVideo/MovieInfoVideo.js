@@ -21,8 +21,6 @@ export default function MovieInfoVideo({item}) {
         return ''
     }
 
-    console.log(store.videos);
-
     const dispatch = useDispatch();
 
     useEffect(() => {

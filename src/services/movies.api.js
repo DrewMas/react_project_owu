@@ -39,7 +39,3 @@ const videos = axios.create({
 const getVideo = async (movie_id)=> await videos.get(`movie/${movie_id}/videos?api_key=${token}&language=en-US`)
 
 export {getMovies, getMovieInfo, getPages, getVideo}
-
-// let url = `https://api.themoviedb.org/3/discover/movie?language=en-US&&page=${currentPage}&with_genres=${id}`
-
-// https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US

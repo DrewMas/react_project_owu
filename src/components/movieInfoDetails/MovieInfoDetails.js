@@ -1,4 +1,8 @@
 import './MovieInfoDetails.css'
+import {useSelector} from "react-redux";
+import ReactPlayer from "react-player";
+import {useEffect} from "react";
+import {getVideo} from "../../services/movies.api";
 
 export default function MovieInfoDetails({item}) {
 
@@ -14,9 +18,21 @@ export default function MovieInfoDetails({item}) {
         original_language,
         homepage
     } = item;
+    console.log(item);
 
     let filmGenres = item.genres.map(value =>
         item.genres.indexOf(value) !== item.genres.length - 1 ? value.name + ', ' : value.name + ' ');
+
+    const store = useSelector(state => {
+        let {moviesReducer} = state;
+        return moviesReducer;
+    });
+
+    useEffect(()=>{
+        getVideo(item.id).then(value => {
+            console.log(value.data.results[0].key);
+        })
+    })
 
     return (
         <div className={'movieInfoWrapper'}>
@@ -37,8 +53,13 @@ export default function MovieInfoDetails({item}) {
                             <p><b>Status</b>: {status}</p>
                             <p><b>Language</b>: {original_language}</p>
                             <p><b>Homepage</b>:
-                                <a href={homepage} target={'_blank'}>
-                                    <button className={'movieInfoHomepageButton'}>Link to a website</button>
+                                <a href={homepage}
+                                   target={'_blank'}
+                                   rel="noreferrer">
+                                    <button
+                                        className={`movieInfoHomepageButton ${store.isDarkTheme === false ? ' ' : 'movieInfoHomepageButton_black'}`}>Link
+                                        to a website
+                                    </button>
                                 </a>
                             </p>
                         </div>
@@ -49,6 +70,7 @@ export default function MovieInfoDetails({item}) {
                     <p>{overview}</p>
                 </div>
             </div>
+
         </div>
     );
 }

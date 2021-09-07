@@ -30,7 +30,16 @@ const pages = axios.create({
 });
 const getPages = async (page) => await pages.get(`/discover/movie?api_key=${token}&page=${page}`)
 
+const videos = axios.create({
+    baseURL: baseUrl,
+    headers: {
+        Authorization: `Bearer ${token}`
+    }
+})
+const getVideo = async (movie_id)=> await videos.get(`movie/${movie_id}/videos?api_key=${token}&language=en-US`)
 
-export {getMovies, getMovieInfo, getPages}
+export {getMovies, getMovieInfo, getPages, getVideo}
 
 // let url = `https://api.themoviedb.org/3/discover/movie?language=en-US&&page=${currentPage}&with_genres=${id}`
+
+// https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US

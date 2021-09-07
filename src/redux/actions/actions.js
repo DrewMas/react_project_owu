@@ -1,4 +1,5 @@
 import {
+    GET_FILM_KEY,
     GET_GENRES,
     GET_MOVIE_INFO,
     GET_MOVIES,
@@ -40,8 +41,12 @@ const setMoviesByGenre = (genresId, page) => {
     return {type: SET_MOVIES_BY_GENRE, payload: {genresId, page}}
 }
 
-const setGenresId = (value) =>{
+const setGenresId = (value) => {
     return {type: SET_GENRES_ID, payload: value}
+}
+
+const getFilmKey = (value) => {
+    return {type: GET_FILM_KEY, payload: value}
 }
 
 export {
@@ -53,5 +58,6 @@ export {
     setCurrentPage,
     getMoviesByGenres,
     setMoviesByGenre,
-    setGenresId
+    setGenresId,
+    getFilmKey
 };

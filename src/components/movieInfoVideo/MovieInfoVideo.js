@@ -1,0 +1,42 @@
+import {useEffect} from "react";
+import {getVideo} from "../../services/movies.api";
+import ReactPlayer from "react-player";
+import {useDispatch, useSelector} from "react-redux";
+import {getFilmKey} from "../../redux/actions/actions";
+
+export default function MovieInfoVideo({item}) {
+
+    const store = useSelector(state => {
+        let {moviesInfoReducer} = state;
+        return moviesInfoReducer;
+    });
+
+    const getKey = () => {
+        if (store.videos[0]) {
+            return store.videos[0].key
+        }
+        return ''
+    }
+
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getVideo(item.id).then(value => {
+            dispatch(getFilmKey(value))
+        })
+    }, [dispatch, item.id]);
+
+
+
+
+    return (
+        <div>
+
+            <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${getKey()}`}
+            />
+
+        </div>
+    );
+}

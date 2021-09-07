@@ -1,7 +1,12 @@
-.movieInfoWrapper {
+.movieInfoCWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.movieInfoContentWrapper {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 18px;
 }
 
@@ -69,4 +74,10 @@
 .movieInfoHomepageButton_black {
     color: white;
 
+}
+
+.movieVideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

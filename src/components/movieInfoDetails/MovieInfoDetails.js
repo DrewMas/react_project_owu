@@ -24,7 +24,7 @@ export default function MovieInfoDetails({item}) {
                     </div>
                 </div>
                 <div className={'movieInfoBottomBox'}>
-                    <h3>Overview:</h3>
+                    <h3 className={'movieInfoBottomBoxTitle'}>Overview:</h3>
                     <p>{overview}</p>
                 </div>
             </div>

@@ -8,7 +8,7 @@
 .moviesListWrapper {
     display: flex;
     justify-content: center;
-    min-width: 480px;
+    min-width: 640px;
 }
 
 .moviesList div a {
@@ -18,6 +18,6 @@
 .moviesList-container {
     min-height: 100%;
     height: auto;
-    min-width: 480px;
+    min-width: 640px;
     max-width: 1280px;
 }

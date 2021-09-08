@@ -6,9 +6,9 @@
     align-items: center;
     height: 60px;
     margin-top: auto;
-    margin-bottom: 0px;
-    bottom: 0px;
-    min-width: 480px;
+    margin-bottom: 0;
+    bottom: 0;
+    min-width: 640px;
 }
 
 .footer-button-container {

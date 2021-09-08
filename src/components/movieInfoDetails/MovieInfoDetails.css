@@ -1,12 +1,10 @@
 
-
 .movieInfoContentWrapper {
     display: flex;
     justify-content: center;
     margin-top: 50px;
     font-size: 18px;
-    /*max-width: 1280px;*/
-    /*min-width: 480px;*/
+    min-width: 640px;
 }
 
 .movieInfoContent {
@@ -28,7 +26,6 @@
 .movieInfoText {
     text-align: justify;
     width: 50%;
-
 }
 
 .movieInfoUpperBox {
@@ -44,6 +41,8 @@
 
 .movieInfoUpperBox_content {
     display: flex;
+    width: 100%;
+    min-width: 640px;
 }
 
 .movieInfoBottomBox {
@@ -51,7 +50,7 @@
     flex-direction: column;
     text-align: justify;
     width: 100%;
-    min-width: 480px;
+    min-width: 640px;
 
 }
 
@@ -83,4 +82,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    min-width: 640px;
 }

@@ -46,7 +46,6 @@ export default function ChooseGenre() {
         }
     }
 
-
     return (
         <div className={`selectFilm`}>
 

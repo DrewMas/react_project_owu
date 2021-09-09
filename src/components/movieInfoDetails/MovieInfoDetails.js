@@ -38,8 +38,8 @@ export default function MovieInfoDetails({item}) {
                             <h1>{original_title}</h1>
                         </div>
                         <div className={'movieInfoUpperBox_content'}>
-                            <div className={'movieInfoImage'}>
-                                <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt=""/>
+                            <div>
+                                <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt=""  className={'movieInfoImage'}/>
                             </div>
                             <div className={'movieInfoText'}>
                                 <p><b>Budget</b>: ${budget} </p>
@@ -67,7 +67,7 @@ export default function MovieInfoDetails({item}) {
                     </div>
                 </div>
             </div>
-            <div className={'movieVideo'}>
+            <div className={'movieVideoBox'}>
                 <MovieInfoVideo item={item }/>
             </div>
         </div>

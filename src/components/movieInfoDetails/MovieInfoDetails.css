@@ -16,11 +16,12 @@
 }
 
 .movieInfoImage {
-    width: 50%;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-.movieInfoImage img {
-    border-radius: 10px;
+.movieInfoImage {
 }
 
 .movieInfoText {
@@ -43,6 +44,7 @@
     display: flex;
     width: 100%;
     min-width: 640px;
+    justify-content: space-between;
 }
 
 .movieInfoBottomBox {
@@ -78,10 +80,11 @@
 
 }
 
-.movieVideo {
+.movieVideoBox {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-width: 640px;
 }
+

@@ -12,10 +12,10 @@ const instance = axios.create({
 
 const getMovies = async ()=> await instance.get(`/discover/movie`);
 
-const getMovieInfo = async (id) => await instance.get(`/movie/${id}`)
+const getMovieInfo = async (id) => await instance.get(`/movie/${id}`);
 
-const getPages = async (page) => await instance.get(`/discover/movie?api_key=${token}&page=${page}`)
+const getPages = async (page) => await instance.get(`/discover/movie?api_key=${token}&page=${page}`);
 
-const getVideo = async (movie_id)=> await instance.get(`movie/${movie_id}/videos?api_key=${token}&language=en-US`)
+const getVideo = async (movie_id)=> await instance.get(`movie/${movie_id}/videos?api_key=${token}&language=en-US`);
 
 export {getMovies, getMovieInfo, getPages, getVideo}

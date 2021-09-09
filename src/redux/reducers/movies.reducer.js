@@ -29,7 +29,6 @@ export const moviesReducer = (state = {
         case SET_DARK_THEME:
             return {...state, isDarkTheme: false};
         case GET_GENRES:
-            console.log(action);
             return {...state, genres: action.payload.data.genres, genresId: action.payload.data.genres};
         case GET_MOVIES_BY_GENRE:
             return {...state, movies: [...action.payload.data.results], page: action.payload.data.page};
